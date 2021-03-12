@@ -91,7 +91,7 @@ function! s:executeCmdAsync(cmd)
   echom "Running Rubocop"
 
   let g:backgroundCommandOutput = tempname()
-  call job_start(a:cmd, {'close_cb': 'BackgroundCmdFinish', 'out_io': 'file', 'out_name': g:backgroundCommandOutput})
+  call jobstart(a:cmd, {'close_cb': 'BackgroundCmdFinish', 'out_io': 'file', 'out_name': g:backgroundCommandOutput})
 endfunction
 
 function! s:executeCmd(cmd)
